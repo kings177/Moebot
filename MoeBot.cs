@@ -35,7 +35,7 @@ namespace MoeClorito
                 .AddSingleton<DiscordSocketClient>()
                 .AddSingleton<CommandService>()
                 .AddSingleton<CommandHandler>()
-                .AddSingleton<SimpleCommands>()
+                .AddSingleton<Commands>()
                 .AddSingleton<AudioService>()
                 .AddSingleton<StartService>()
                 .AddLavaNode(x => { x.SelfDeaf = false; });

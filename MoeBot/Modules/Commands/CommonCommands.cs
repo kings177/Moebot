@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoeClorito.Modules
 {
-    public class SimpleCommands : ModuleBase
+    public class CommonCommands : ModuleBase
     {
         [Command("hi")]
         [RequireOwner]

@@ -13,7 +13,7 @@ namespace MoeClorito.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.User.ID == UserID) == null)
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
                     return 0;
 
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.GoldAmount).FirstOrDefault();
@@ -177,7 +177,7 @@ namespace MoeClorito.Data
                 if (DbContext.Data.Where(x => x.UserID == UserID) == null)
                     return null;
                 {
-                    Resources.Helmet helmet = new Resources.Helmet
+                    RPG.Resources.Helmet helmet = new RPG.Resources.Helmet
                     (
                         UserID,
                         DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_ModID).FirstOrDefault(),
@@ -203,7 +203,7 @@ namespace MoeClorito.Data
             {
                 if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
                 {
-                    Resources.Gauntlets gauntlets = new Resources.Gauntlets
+                    RPG.Resources.Gauntlets gauntlets = new RPG.Resources.Gauntlets
                     (
                         UserID,
                         DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_ModID).FirstOrDefault(),
@@ -230,7 +230,7 @@ namespace MoeClorito.Data
             {
                 if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
                 {
-                    Resources.Chestplate chestplate = new Resources.Chestplate
+                    RPG.Resources.Chestplate chestplate = new RPG.Resources.Chestplate
                     (
                         UserID,
                         DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_ModID).FirstOrDefault(),
@@ -257,7 +257,7 @@ namespace MoeClorito.Data
             {
                 if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
                 {
-                    Resources.Belt belt = new Resources.Belt
+                    RPG.Resources.Belt belt = new RPG.Resources.Belt
                     (
                         UserID,
                         DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_ModID).FirstOrDefault(),
@@ -284,7 +284,7 @@ namespace MoeClorito.Data
             {
                 if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
                 {
-                    Resources.Leggings leggings = new Resources.Leggings
+                    RPG.Resources.Leggings leggings = new RPG.Resources.Leggings
                     (
                         UserID,
                         DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_ModID).FirstOrDefault(),
@@ -311,7 +311,7 @@ namespace MoeClorito.Data
             {
                 if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
                 {
-                    Resources.Boots boots = new Resources.Boots
+                    RPG.Resources.Boots boots = new RPG.Resources.Boots
                     (
                         UserID,
                         DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_ModID).FirstOrDefault(),
@@ -735,7 +735,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static async Task SetHelmet(ulong UserID, Resources.Helmet helmet)
+        public static async Task SetHelmet(ulong UserID, RPG.Resources.Helmet helmet)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -799,7 +799,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static async Task SetChestplate(ulong UserID, Resources.Chestplate chestplate)
+        public static async Task SetChestplate(ulong UserID, RPG.Resources.Chestplate chestplate)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -863,7 +863,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static async Task SetGauntlets(ulong UserID, Resources.Gauntlets gauntlets)
+        public static async Task SetGauntlets(ulong UserID, RPG.Resources.Gauntlets gauntlets)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -927,7 +927,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static async Task SetBelt(ulong UserID, Resources.Belt belt)
+        public static async Task SetBelt(ulong UserID, RPG.Resources.Belt belt)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -991,7 +991,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static async Task SetLeggings(ulong UserID, Resources.Leggings leggings)
+        public static async Task SetLeggings(ulong UserID, RPG.Resources.Leggings leggings)
         {
             using (var DbContext = new SqliteDbContext())
             {

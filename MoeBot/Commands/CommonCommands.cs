@@ -20,6 +20,12 @@ namespace MoeClorito.Modules
             }
         }
 
+        [Command("ping"), Alias("Ping")]
+        public async Task Ping()
+        {
+            await ReplyAsync("Pong");
+        }
+
         [Command("talk")]
         [Alias("ask")]
         public async Task Askasync([Remainder] string args = null)

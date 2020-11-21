@@ -42,7 +42,7 @@ namespace RPG.Resources
         }
     }
 
-    public static class EnemyTemplates
+    public static class EnemyTemplate
     {
         public static Enemy Slime = new Enemy
             ("https://media.discordapp.net/attachments/773626859585142868/779627325032890379/250.png?width=225&height=225",

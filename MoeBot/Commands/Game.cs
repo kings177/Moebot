@@ -1,16 +1,20 @@
-﻿using Discord;
+﻿using System;
+using System.Linq;
+using System.Text;
+using System.Reflection;
+using System.IO;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MoeClorito.RPG;
-using MoeClorito.RPG.Resources;
+using MoeClorito.Data;
 using MoeClorito.RPG.Resources.Database;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
+using RPG;
+using RPG.Resources;
+using Microsoft.Extensions.DependencyInjection;
+using static RPG.Resources.EnemyTemplate;
+using MoeClorito.RPG.Resources;
 
 namespace MoeClorito.RPG.Commands
 {
@@ -182,7 +186,7 @@ namespace MoeClorito.RPG.Commands
 
                 if (Data.Data.GetData_Level(Context.User.Id) == 0 || Data.Data.GetData_Level(Context.User.Id) == 1)
                 {
-                    await SpawnEnemy(Resources.EnemyTemplates.TrainingDoll, 1);
+                    await SpawnEnemy(Resources.EnemyTemplate.TrainingDoll, 1);
                     return;
                 }
                 else

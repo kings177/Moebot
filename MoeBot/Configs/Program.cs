@@ -106,7 +106,7 @@ namespace MoeClorito
                     try { allowed_on_world_bosses = (row[18] as string) == "Yes" ? true : false; }
                     catch { Console.WriteLine("Failed to set allowed_on_world_bosses of " + row[0] as string); }
 
-                    Resources.Spell spell = new Resources.Spell
+                    RPG.Resources.Spell spell = new RPG.Resources.Spell
                         (
                             row[0] as string,
                             row[1] as string,
@@ -160,7 +160,7 @@ namespace MoeClorito
 
                         if (temp[0] == "Monster")
                         {
-                            Game.designedEnemiesI.Add(new Resources.DesignedEnemy(temp[5], temp[6], temp[7], temp[8], temp[9], temp[10], temp[11]));
+                            Game.designedEnemiesI.Add(new RPG.Resources.DesignedEnemy(temp[5], temp[6], temp[7], temp[8], temp[9], temp[10], temp[11]));
                         }
                     }
                 }

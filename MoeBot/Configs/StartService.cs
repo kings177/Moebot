@@ -32,10 +32,9 @@ namespace MoeClorito.Services
             string clientToken = _config["Token"];
             if (string.IsNullOrWhiteSpace(clientToken))
             {
-                throw new Exception("Token missing from config.json! Enter you token there (root directory).");
+                throw new Exception("Token missing from config.json!.");
             }
 
-            
             await _client.LoginAsync(TokenType.Bot, clientToken);
             await _client.StartAsync();
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
@@ -43,6 +42,14 @@ namespace MoeClorito.Services
 
         public async Task ReadyAsync()
         {
+            Game.BossChance();
+            await Game.ServerConnector();
+
+            while (true)
+            {
+
+            }
+
             Console.WriteLine($"Connected as Moe Clorito ");
             await Task.CompletedTask;
         }

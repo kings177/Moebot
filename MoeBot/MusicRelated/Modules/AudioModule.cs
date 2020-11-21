@@ -88,7 +88,7 @@ namespace MoeClorito.Modules
 
         /////////////////////////////////////////////////////////////////
 
-        [Command("Play"), Alias ("p")]
+        [Command("Play"), Alias("p")]
         public async Task PlayAsync([Remainder] string searchQuery)
         {
             if (string.IsNullOrWhiteSpace(searchQuery))
@@ -474,10 +474,10 @@ namespace MoeClorito.Modules
 
 
         /////////////////////////////////////////////////////////////////
-        
 
 
-        [Command("queue"), Alias ("q")]
+
+        [Command("queue"), Alias("q")]
         public Task Queue()
         {
             var player = _lavaNode.GetPlayer(Context.Guild);

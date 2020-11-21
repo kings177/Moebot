@@ -21,8 +21,8 @@ namespace MoeClorito.Modules
         }
 
         [Command("talk")]
-        [Alias ("ask")]
-        public async Task Askasync([Remainder]string args = null)
+        [Alias("ask")]
+        public async Task Askasync([Remainder] string args = null)
         {
             var sb = new StringBuilder();
 

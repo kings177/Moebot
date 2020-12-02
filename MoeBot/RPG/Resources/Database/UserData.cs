@@ -23,7 +23,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint FlatHealthRegen { get; set; }
 
 
-        //skills
+        // skills
         public string Learned_Spells { get; set; }
         public string Equipped_Spell_1 { get; set; }
         public string Equipped_Spell_2 { get; set; }
@@ -31,7 +31,7 @@ namespace MoeClorito.RPG.Resources.Database
         public string Equipped_Spell_4 { get; set; }
 
 
-        //Helmets
+        // Helmets
         public string Helmet_Name { get; set; }
         public string Helmet_URL { get; set; }
         public string Helmet_Rarity { get; set; }
@@ -43,7 +43,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Helmet_Cost { get; set; }
 
 
-        //Chestplates
+        // Chestplates
         public string Chestplate_Name { get; set; }
         public string Chestplate_URL { get; set; }
         public string Chestplate_Rarity { get; set; }
@@ -55,7 +55,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Chestplate_Cost { get; set; }
 
 
-        //Gauntlets
+        // Gauntlets
         public string Gauntlet_Name { get; set; }
         public string Gauntlet_URL { get; set; }
         public string Gauntlet_Rarity { get; set; }
@@ -67,7 +67,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Gauntlet_Cost { get; set; }
 
 
-        //Belts
+        // Belts
         public string Belt_Name { get; set; }
         public string Belt_URL { get; set; }
         public string Belt_Rarity { get; set; }
@@ -79,7 +79,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Belt_Cost { get; set; }
 
 
-        //Leggings
+        // Leggings
         public string Legging_Name { get; set; }
         public string Legging_URL { get; set; }
         public string Legging_Rarity { get; set; }
@@ -91,7 +91,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Legging_Cost { get; set; }
 
 
-        //Boots
+        // Boots
         public string Boot_Name { get; set; }
         public string Boot_URL { get; set; }
         public string Boot_Rarity { get; set; }
@@ -103,7 +103,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Boot_Cost { get; set; }
 
 
-        //Artifact
+        // Artifact
         public string Artifact_Name { get; set; }
         public string Artifact_URL { get; set; }
         public string Artifact_Rarity { get; set; }
@@ -117,7 +117,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Artifact_Cost { get; set; }
 
 
-        //Weapon
+        // Weapon
         public string Weapon_Name { get; set; }
         public string Weapon_Efficient_Class { get; set; }
         public string Weapon_URL { get; set; }
@@ -132,7 +132,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Weapon_Cost { get; set; }
 
 
-        //Stats
+        // Stats
         public uint SkillPoints { get; set; }
         public uint Stamina { get; set; }
         public uint Stability { get; set; }
@@ -141,27 +141,29 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Luck { get; set; }
 
 
-        //Potions
+        // Potions
         public uint SmallPotionCount { get; set; }
         public uint MediumPotionCount { get; set; }
         public uint LargePotionCount { get; set; }
 
 
-        //Boxes
+        // Boxes
         public uint CommonBoxCount { get; set; }
+        public uint UncommonBoxCount { get; set; }
         public uint RareBoxCount { get; set; }
-        public uint EpicBoxCount { get; set; }
+        public uint VeryRareBoxCount { get; set; }
         public uint LegendaryBoxCount { get; set; }
+        public uint MythicBoxCount { get; set; }
         public uint OmegaBoxCount { get; set; }
 
 
 
-        //PvP
+        // PvP
         public uint WinCount { get; set; }
         public uint LoseCount { get; set; }
 
 
-        //Exploration
+        // Exploration
         public uint Explored_Training_Zone { get; set; }
         public uint Explored_Forsaken_Graves { get; set; }
         public uint Explored_Goblins_Lair { get; set; }
@@ -171,7 +173,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Explored_Broken_Village { get; set; }
 
 
-        //Bank
+        // Bank
         public uint StoredGold { get; set; }
 
 

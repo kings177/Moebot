@@ -3,14 +3,14 @@ using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Util.Store;
-using MoeClorito.RPG.Commands;
+using MoeClorito.Commands;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
-namespace MoeClorito
+namespace MoeClorito.Configs
 {
     class Program
     {

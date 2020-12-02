@@ -7,11 +7,11 @@ using System;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace MoeClorito.Services
+namespace MoeClorito.Configs
 {
     public class StartService
     {
-        private readonly DiscordSocketClient _client;
+        public static DiscordSocketClient _client;
         private readonly CommandService _commands;
         private readonly IConfigurationRoot _config;
         private readonly IServiceProvider _services;
@@ -42,16 +42,12 @@ namespace MoeClorito.Services
 
         public async Task ReadyAsync()
         {
-            Game.BossChance();
-            await Game.ServerConnector();
-
             while (true)
             {
-
-            }
-
             Console.WriteLine($"Connected as Moe Clorito ");
             await Task.CompletedTask;
+            }
+
         }
     }
 }

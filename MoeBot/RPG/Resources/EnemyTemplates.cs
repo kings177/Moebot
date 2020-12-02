@@ -42,8 +42,22 @@ namespace RPG.Resources
         }
     }
 
-    public static class EnemyTemplate
+    public static class EnemyTemplates
     {
+        public static ulong Bronze = 783490312344567878;
+
+        public static ulong Silver = 783490309631377418;
+
+        public static ulong Gold = 783490306368077844;
+
+        public static ulong Platinum = 783490294226223155;
+
+        public static ulong  GrandMaster = 783490291972702228;
+
+        public static ulong ServerID = 773626859585142865;
+
+
+
         public static Enemy Slime = new Enemy
             ("https://media.discordapp.net/attachments/773626859585142868/779627325032890379/250.png?width=225&height=225",
             20, // Max Health
@@ -130,7 +144,7 @@ namespace RPG.Resources
                     _flavor = _flavor.Replace("[MonsterName]", _name);
                 }
 
-                flavor = flavor;
+                flavor = _flavor;
                 iconURL = _iconURL;
 
                 bool parsedMinLevel = int.TryParse(_minLevel, out minLevel);

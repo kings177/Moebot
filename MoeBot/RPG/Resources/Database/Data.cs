@@ -9,6 +9,10 @@ namespace MoeClorito.Data
 {
     public static class Data
     {
+
+
+        // PLAYERS STUFF
+
         public static uint GetData_GoldAmount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -129,6 +133,7 @@ namespace MoeClorito.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Second).FirstOrDefault();
             }
         }
+
         public static int GetData_Day(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -139,6 +144,7 @@ namespace MoeClorito.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Day).FirstOrDefault();
             }
         }
+
         public static int GetLastDaily(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -149,6 +155,7 @@ namespace MoeClorito.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.DailyClaimed).FirstOrDefault();
             }
         }
+
         public static string GetRank(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -159,6 +166,7 @@ namespace MoeClorito.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Rank).FirstOrDefault();
             }
         }
+
         public static string GetClass(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -169,6 +177,9 @@ namespace MoeClorito.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Class).FirstOrDefault();
             }
         }
+
+
+        // ITEMS
 
         public static RPG.Resources.Helmet GetHelmet(ulong UserID)
         {
@@ -332,6 +343,8 @@ namespace MoeClorito.Data
             }
         }
 
+        // SKILLS
+
         public static uint GetData_SkillPoints(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -398,6 +411,8 @@ namespace MoeClorito.Data
             }
         }
 
+        // POTIONS
+        
         public static uint GetData_SmallPotionCount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -431,7 +446,20 @@ namespace MoeClorito.Data
             }
         }
 
+        // CHESTS
+
         public static uint GetData_CommonBoxCount(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                    return 0;
+
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.CommonBoxCount).FirstOrDefault();
+            }
+        }
+
+        public static uint GetData_UncommonBoxCount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -453,7 +481,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static uint GetData_EpicBoxCount(ulong UserID)
+        public static uint GetData_VeryRareBoxCount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -475,6 +503,17 @@ namespace MoeClorito.Data
             }
         }
 
+        public static uint GetData_MythicBoxCount(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                    return 0;
+
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.LegendaryBoxCount).FirstOrDefault();
+            }
+        }
+
         public static uint GetData_OmegaBoxCount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -485,6 +524,16 @@ namespace MoeClorito.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.OmegaBoxCount).FirstOrDefault();
             }
         }
+
+
+        /*                                                SPAM PART TO CONFIG ALL OF THE PREVIOUS STUFF AND SOME OTHERS BULLSHIT                                               */
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
 
         public static async Task SetXP(ulong UserID, uint XP)
         {
@@ -1618,6 +1667,55 @@ namespace MoeClorito.Data
                 await DbContext.SaveChangesAsync();
             }
         }
+        public static async Task AddUncommonBoxCount(ulong UserID, uint amount)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1)
+                {
+                }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        Current.UncommonBoxCount = Current.UncommonBoxCount + amount;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetUncommonBoxCount(ulong UserID, uint amount)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1)
+                {
+                }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        Current.UncommonBoxCount = amount;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
 
         public static async Task AddRareBoxCount(ulong UserID, uint amount)
         {
@@ -1668,8 +1766,8 @@ namespace MoeClorito.Data
                 await DbContext.SaveChangesAsync();
             }
         }
-
-        public static async Task AddEpicBoxCount(ulong UserID, uint amount)
+        
+        public static async Task AddVeryRareBoxCount(ulong UserID, uint amount)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -1684,7 +1782,7 @@ namespace MoeClorito.Data
                     {
                         UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
 
-                        Current.EpicBoxCount = Current.EpicBoxCount + amount;
+                        Current.VeryRareBoxCount = Current.VeryRareBoxCount + amount;
 
                         DbContext.Data.Update(Current);
                     }
@@ -1694,7 +1792,7 @@ namespace MoeClorito.Data
             }
         }
 
-        public static async Task SetEpicBoxCount(ulong UserID, uint amount)
+        public static async Task SetVeryRareBoxCount(ulong UserID, uint amount)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -1709,7 +1807,7 @@ namespace MoeClorito.Data
                     {
                         UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
 
-                        Current.EpicBoxCount = amount;
+                        Current.VeryRareBoxCount = amount;
 
                         DbContext.Data.Update(Current);
                     }
@@ -1769,6 +1867,56 @@ namespace MoeClorito.Data
             }
         }
 
+        public static async Task AddMythicBoxCount(ulong UserID, uint amount)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1)
+                {
+                }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        Current.MythicBoxCount = Current.MythicBoxCount + amount;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetMythicBoxCount(ulong UserID, uint amount)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1)
+                {
+                }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        Current.MythicBoxCount = amount;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+
         public static async Task AddOmegaBoxCount(ulong UserID, uint amount)
         {
             using (var DbContext = new SqliteDbContext())
@@ -1784,7 +1932,7 @@ namespace MoeClorito.Data
                     {
                         UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
 
-                        Current.OmegaBoxCount = Current.OmegaCount + amount;
+                        Current.OmegaBoxCount = Current.OmegaBoxCount + amount;
 
                         DbContext.Data.Update(Current);
                     }
@@ -1969,7 +2117,10 @@ namespace MoeClorito.Data
             using (var DbContext = new SqliteDbContext())
             {
                 var query = DbContext.Data.Where(x => x.UserID == UserID);
-                if (query != null && query.Count() < 1) { }
+                if (query != null && query.Count() < 1) 
+                {
+
+                }
                 else
                 {
                     if (query != null)

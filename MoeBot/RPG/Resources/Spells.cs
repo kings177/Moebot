@@ -21,7 +21,6 @@
         string spellDescription { get; set; }
         string spellIcon { get; set; }
         bool allowedInPvP { get; set; }
-        bool allowedOnWorldBosses { get; set; }
 
         public Spell()
         {
@@ -44,7 +43,6 @@
             spellDescription = "NULL";
             spellIcon = "https://cdn.discordapp.com/attachments/773626859585142868/779644510309187605/icon-creature-channelingpng.png";
             allowedInPvP = false;
-            allowedOnWorldBosses = false;
         }
 
         public Spell(string name, string rarity, string type, string class_exclusive, float damage_min, float damage_max, float crit, float modID, float heal_min, float heal_max, float mana_cost,
@@ -69,7 +67,6 @@
             spellDescription = spell_description;
             spellIcon = spell_icon;
             allowedInPvP = pvp;
-            allowedOnWorldBosses = world_bosses;
         }
     }
 }

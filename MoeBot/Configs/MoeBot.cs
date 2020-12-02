@@ -4,12 +4,12 @@ using Discord.WebSocket;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MoeClorito.Modules;
-using MoeClorito.Services;
+using MoeClorito.Commands;
 using System;
 using System.Threading.Tasks;
 using Victoria;
 
-namespace MoeClorito
+namespace MoeClorito.Configs
 {
     public class MoeBot
     {

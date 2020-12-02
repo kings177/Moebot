@@ -7,7 +7,7 @@ namespace MoeClorito.RPG.Resources.Database
     {
         public DbSet<UserData> Data { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder Option)
+        protected override void OnConfiguring(DbContextOptionsBuilder Options)
         {
             Options.UseSqlite($"Data source=RPG.dllDatabase.sqlite");
         }

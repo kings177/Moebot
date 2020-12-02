@@ -7,7 +7,7 @@ using System;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace MoeClorito.Services
+namespace MoeClorito.Commands
 {
     public class CommandHandler
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MoeClorito.RPG.Resources.Database
+namespace RPG.Resources.Database
 {
     public class UserData
     {
@@ -13,6 +13,7 @@ namespace MoeClorito.RPG.Resources.Database
         public uint Health { get; set; }
         public uint Level { get; set; }
         public uint XP { get; set; }
+        public uint CurrentHealth { get; set; }
         public int Hour { get; set; }
         public int Minute { get; set; }
         public int Second { get; set; }

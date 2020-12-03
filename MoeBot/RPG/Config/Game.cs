@@ -1,20 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Discord;
+﻿using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using RPG.Resources;
-using static RPG.Resources.EnemyTemplates;
-using MoeClorito.RPG.Resources;
-using Google.Apis.Auth.OAuth2;
 using MoeClorito.Configs;
-using System.Threading;
-using System.IO;
-using System.Diagnostics;
+using RPG.Resources;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using static RPG.Resources.EnemyTemplates;
 
-namespace MoeClorito.Commands
+namespace RPG.Config
 {
     public class Game : ModuleBase<SocketCommandContext>
     {
@@ -1562,7 +1557,7 @@ namespace MoeClorito.Commands
 
                 embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 embed.WithImageUrl(imageURL);
-                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" 
+                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n"
                     + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 embed.WithFooter("Type ;Equip to equip, type ;Sell [Armor Piece] to sell your current armor slot to use this item. Do ;Sell Drop to sell this item.");
 
@@ -1730,7 +1725,7 @@ namespace MoeClorito.Commands
 
                 embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 embed.WithImageUrl(imageURL);
-                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" 
+                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n"
                     + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 embed.WithFooter("Type ;Equip to equip, type ;Sell [Armor Piece] to sell your current armor slot to use this item. Do ;Sell Drop to sell this item.");
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -1895,7 +1890,7 @@ namespace MoeClorito.Commands
 
                 embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 embed.WithImageUrl(imageURL);
-                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" 
+                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n"
                     + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 embed.WithFooter("Type ;Equip to equip, type ;Sell [Armor Piece] to sell your current armor slot to use this item. Do ;Sell Drop to sell this item.");
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -2053,7 +2048,7 @@ namespace MoeClorito.Commands
 
                 embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 embed.WithImageUrl(imageURL);
-                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" 
+                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n"
                     + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 embed.WithFooter("Type ;Equip to equip, type ;Sell [Armor Piece] to sell your current armor slot to use this item. Do ;Sell Drop to sell this item.");
 
@@ -2213,7 +2208,7 @@ namespace MoeClorito.Commands
 
                 embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 embed.WithImageUrl(imageURL);
-                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" 
+                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n"
                     + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 embed.WithFooter("Type ;Equip to equip, type ;Sell [Armor Piece] to sell your current armor slot to use this item. Do ;Sell Drop to sell this item.");
 
@@ -2372,7 +2367,7 @@ namespace MoeClorito.Commands
 
                 embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 embed.WithImageUrl(imageURL);
-                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + 
+                embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " +
                     Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 embed.WithFooter("Type ;Equip to equip, type ;Sell [Armor Piece] to sell your current armor slot to use this item. Do ;Sell Drop to sell this item.");
 
@@ -3095,7 +3090,7 @@ namespace MoeClorito.Commands
             if (boot != null)
                 boots = boot.ItemName + " - " + boot.ItemRarity + "\nArmor: " + boot.Armor + "\nHealth: " + boot.Health + "\nHealth Regeneration: " + boot.HealthGainOnDamage + "\nSell Price: " + boot.ItemCost;
             else boots = "No boots equipped...";
-            embebado.WithDescription("═════════════════════\n" + helmets + "\n═════════════════════\n" + gauntlets + "\n═════════════════════\n" + chestplate + "\n═════════════════════\n" + belts + 
+            embebado.WithDescription("═════════════════════\n" + helmets + "\n═════════════════════\n" + gauntlets + "\n═════════════════════\n" + chestplate + "\n═════════════════════\n" + belts +
                 "\n═════════════════════\n" + leggings + "\n═════════════════════\n" + boots + "\n═════════════════════");
             embebado.WithFooter("To view the icons of your item, do ;Equipment [EquipmentType]");
             embebado.Color = Color.LightOrange;
@@ -3267,7 +3262,7 @@ namespace MoeClorito.Commands
         }
 
         [Command("lootbox"), Alias("LOOTBOX", "lootchest", "lootchests", "lb"), Summary("Open your boxes/chets")]
-        public async Task Lootboxes([Remainder]string option = "")
+        public async Task Lootboxes([Remainder] string option = "")
         {
             option = option.ToLower();
             if (option == "")
@@ -3377,7 +3372,7 @@ namespace MoeClorito.Commands
                 {
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.WithTitle("Legendary Loot Box Opened!");
-                    embed.Color = Discord.Color.Orange;
+                    embed.Color = Color.Orange;
                     embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                     await Context.Channel.SendMessageAsync("", false, embed.Build());
                     await Data.Data.SetLegendaryBoxCount(Context.User.Id, Data.Data.GetData_LegendaryBoxCount(Context.User.Id) - 1);
@@ -3387,7 +3382,7 @@ namespace MoeClorito.Commands
                 {
                     EmbedBuilder Embed = new EmbedBuilder();
                     Embed.WithTitle("You do not have any loot boxes of this type...");
-                    Embed.Color = Discord.Color.Red;
+                    Embed.Color = Color.Red;
                     Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 }
@@ -3398,7 +3393,7 @@ namespace MoeClorito.Commands
                 {
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.WithTitle("Mythic Loot Box Opened!");
-                    embed.Color = Discord.Color.Red;
+                    embed.Color = Color.Red;
                     embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                     await Context.Channel.SendMessageAsync("", false, embed.Build());
                     await Data.Data.SetMythicBoxCount(Context.User.Id, Data.Data.GetData_MythicBoxCount(Context.User.Id) - 1);
@@ -3408,7 +3403,7 @@ namespace MoeClorito.Commands
                 {
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.WithTitle("You do not have any loot boxes of this type...");
-                    embed.Color = Discord.Color.Red;
+                    embed.Color = Color.Red;
                     embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                     await Context.Channel.SendMessageAsync("", false, embed.Build());
                 }
@@ -3419,7 +3414,7 @@ namespace MoeClorito.Commands
                 {
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.WithTitle("Godly Loot Box Opened!");
-                    embed.Color = Discord.Color.Teal;
+                    embed.Color = Color.Teal;
                     embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                     await Context.Channel.SendMessageAsync("", false, embed.Build());
                     await Data.Data.SetOmegaBoxCount(Context.User.Id, Data.Data.GetData_OmegaBoxCount(Context.User.Id) - 1);
@@ -3429,7 +3424,7 @@ namespace MoeClorito.Commands
                 {
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.WithTitle("You do not have any loot boxes of this type...");
-                    embed.Color = Discord.Color.Red;
+                    embed.Color = Color.Red;
                     embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                     await Context.Channel.SendMessageAsync("", false, embed.Build());
                 }

@@ -3,12 +3,13 @@ using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Util.Store;
-using MoeClorito.Commands;
+using RPG.Config;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using static RPG.Resources.EnemyTemplates;
 
 namespace MoeClorito.Configs
 {
@@ -160,7 +161,7 @@ namespace MoeClorito.Configs
 
                         if (temp[0] == "Monster")
                         {
-                            Game.designedEnemiesI.Add(new RPG.Resources.DesignedEnemy(temp[5], temp[6], temp[7], temp[8], temp[9], temp[10], temp[11]));
+                            Game.designedEnemiesI.Add(new DesignedEnemy(temp[5], temp[6], temp[7], temp[8], temp[9], temp[10], temp[11]));
                         }
                     }
                 }

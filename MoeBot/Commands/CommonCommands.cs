@@ -100,7 +100,7 @@ namespace MoeClorito.Commands
             await ReplyAsync(null, false, embed.Build());
         }
 
-        [Command("Pfp"), Alias("avatar", "profile")]
+        [Command("pfp"), Alias("avatar", "profile")]
         public async Task ProfilePic([Remainder] IUser Input = null)
         {
             if (Input == null)
@@ -168,7 +168,8 @@ namespace MoeClorito.Commands
                 "\n**14.)** See the chests you own: `;Lootbox`." +
                 "\n**15.)** Open a Chest: `;lootchest [Common, Uncommon, Rare, VeryRare, Legendary, Mythic, OmegaPoggers]`." +
                 "\n**16.)** See your current skill points: `;skill`." +
-                "\n**17.)** Upgrade a certain skill with a skill point: `;skill [Stamina, Stability, Dexterity, Strength, Luck]`.");
+                "\n**17.)** Upgrade a certain skill with a skill point: `;skill [Stamina, Stability, Dexterity, Strength, Luck]`." +
+                "\n**18.)** Show your RPG profile: `;rpgpfp` or `;rpgpfp [@user]`");
             embed.WithColor(40, 200, 150);
             embed.Color = Color.Gold;
             var msg = await Context.Channel.SendMessageAsync("", false, embed.Build());

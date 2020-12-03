@@ -44,8 +44,8 @@ namespace MoeClorito.Configs
         {
             while (true)
             {
-            Console.WriteLine($"Connected as Moe Clorito ");
-            await Task.CompletedTask;
+                Console.WriteLine($"Connected as Moe Clorito ");
+                await Task.CompletedTask;
             }
 
         }

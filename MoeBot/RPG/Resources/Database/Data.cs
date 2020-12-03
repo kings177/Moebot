@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RPG.Resources.Database;
+using System;
 using System.Collections.Generic;
-using MoeClorito.RPG.Resources.Database;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MoeClorito.Data
+namespace RPG.Data
 {
     public static class Data
     {
@@ -412,7 +411,7 @@ namespace MoeClorito.Data
         }
 
         // POTIONS
-        
+
         public static uint GetData_SmallPotionCount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -533,7 +532,7 @@ namespace MoeClorito.Data
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
 
         public static async Task SetXP(ulong UserID, uint XP)
         {
@@ -1766,7 +1765,7 @@ namespace MoeClorito.Data
                 await DbContext.SaveChangesAsync();
             }
         }
-        
+
         public static async Task AddVeryRareBoxCount(ulong UserID, uint amount)
         {
             using (var DbContext = new SqliteDbContext())
@@ -2117,7 +2116,7 @@ namespace MoeClorito.Data
             using (var DbContext = new SqliteDbContext())
             {
                 var query = DbContext.Data.Where(x => x.UserID == UserID);
-                if (query != null && query.Count() < 1) 
+                if (query != null && query.Count() < 1)
                 {
 
                 }

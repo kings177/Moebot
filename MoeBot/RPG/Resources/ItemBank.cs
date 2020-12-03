@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MoeClorito.RPG.Resources
+﻿namespace RPG.Resources
 {
     public class GenericItem
     {

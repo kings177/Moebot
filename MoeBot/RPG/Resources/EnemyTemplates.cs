@@ -21,7 +21,7 @@ namespace RPG.Resources
         public bool IsDead { get; set; }
         public bool IsInCombat { get; set; }
 
-        public Enemy (string url, uint maxHealth, uint minHealth, uint maxDamage, uint minDamage, uint maxLevel, uint minLevel,
+        public Enemy(string url, uint maxHealth, uint minHealth, uint maxDamage, uint minDamage, uint maxLevel, uint minLevel,
             uint maxGoldDrop, uint minGoldDrop, uint maxXPDrop, uint minXPDrop, string name, bool isDead = false, bool isInCombat = false)
         {
             WebURL = url;
@@ -52,7 +52,7 @@ namespace RPG.Resources
 
         public static ulong Platinum = 783490294226223155;
 
-        public static ulong  GrandMaster = 783490291972702228;
+        public static ulong GrandMaster = 783490291972702228;
 
         public static ulong ServerID = 773626859585142865;
 

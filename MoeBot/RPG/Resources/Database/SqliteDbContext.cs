@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 
-namespace MoeClorito.RPG.Resources.Database
+namespace RPG.Resources.Database
 {
     class SqliteDbContext : DbContext
     {

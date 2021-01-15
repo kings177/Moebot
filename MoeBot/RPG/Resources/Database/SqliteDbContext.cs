@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.IO;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace RPG.Resources.Database

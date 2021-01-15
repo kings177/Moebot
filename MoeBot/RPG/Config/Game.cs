@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using static RPG.Resources.EnemyTemplates;
+using static RPG.Emojis.Emojis;
 
 namespace RPG.Config
 {

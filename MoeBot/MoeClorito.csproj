@@ -12,6 +12,7 @@
     <PackageReference Include="Google.Apis.Auth" Version="1.49.0" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.49.0.2146" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />

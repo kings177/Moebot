@@ -1,4 +1,6 @@
-﻿namespace RPG.Resources
+﻿using System.Collections.Generic;
+
+namespace RPG.Resources
 {
     public class GenericItem
     {
@@ -166,5 +168,50 @@
             ItemCost = itemCost;
             ItemRarity = itemRarity;
         }
+    }
+
+    public class Items
+    {
+        public const string EmptySlotIcon = "https://cdn.discordapp.com/attachments/542225685695954945/636453041821843486/EmptySlot.png";
+
+        public static List<string> mod_names = new List<string>()
+        {
+
+        };
+
+        public static string[] weapon_icons = new string[]
+        {
+
+        };
+
+        public static string[] helmet_icons = new string[]
+        {
+
+        };
+
+    public static string[] acessorie_icons = new string[]
+            {
+
+            };
+    public static string[] chestplate_icons = new string[]
+        {
+
+        };
+        public static string[] gauntlet_icons = new string[]
+        {
+
+        };
+        public static string[] belt_icons = new string[]
+        {
+
+        };
+        public static string[] legging_icons = new string[]
+        {
+
+        };
+        public static string[] boot_icons = new string[]
+        {
+
+        };
     }
 }

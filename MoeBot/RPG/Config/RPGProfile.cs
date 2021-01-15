@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static RPG.Emojis.Emojis;
 
 namespace RPG.Config
 {
@@ -225,7 +226,7 @@ namespace RPG.Config
                             bool exist = true;
                             using (var DbContext = new SqliteDbContext())
                             {
-                                var query = DbContext.Data.Where(x => x.UserID == User.Id);
+                                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == User.Id);
                                 if (query == null || query.Count() < 1) exist = false;
                             }
 
@@ -460,88 +461,88 @@ namespace RPG.Config
             string classEmoji = "";
             string baseStats = "";
 
-            if (check == "" || check == "")
+            if (check == "Archer" || check == "archer")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782378943218974781/hiclipart.com_1.png?width=348&height=464");
+                classEmoji = Archer;
+                baseStats = "56 Damage, 22 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Paladin" || check == "paladin")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782380077311983636/hiclipart.com_2.png?width=259&height=464");
+                classEmoji = Paladin;
+                baseStats = "53 Damage, 25 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Warrior" || check == "warrior")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782378958326726676/hiclipart.com.png?width=266&height=464");
+                classEmoji = Warrior;
+                baseStats = "49 Damage, 29 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Wizard" || check == "wizard")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782380503834951710/hiclipart.com_1.png?width=205&height=464");
+                classEmoji = Wizard;
+                baseStats = "45 Damage, 32 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Witch" || check == "witch")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782383932989636608/hiclipart.com_2.png?width=383&height=464");
+                classEmoji = Witch;
+                baseStats = "51 Damage, 27 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Rogue" || check == "rogue")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782382824916254730/hiclipart.com.png?width=293&height=464");
+                classEmoji = Rogue;
+                baseStats = "65 Damage, 15 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Monk" || check == "monk")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782382486507618334/hiclipart.com_4.png?width=433&height=464");
+                classEmoji = Monk;
+                baseStats = "38 Damamge, 38 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Assassin" || check == "assassin")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782380493697843260/hiclipart.com.png?width=220&height=464");
+                classEmoji = Assassin;
+                baseStats = "73 Damage, 10 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Tamer" || check == "tamer")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782383216802922496/hiclipart.com.png?width=284&height=464");
+                classEmoji = Tamer;
+                baseStats = "68 Damage, 13 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Druid" || check == "druid")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782381450774315008/hiclipart.com_2.png?width=231&height=464");
+                classEmoji = Druid;
+                baseStats = "42 Damage, 36 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Necromancer" || check == "necromancer")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782383900978053140/hiclipart.com_1.png?width=248&height=464");
+                classEmoji = Necromancer;
+                baseStats = "77 Damage, 7 Health";
             }
 
-            else if (check == "" || check == "")
+            else if (check == "Berserker" || check == "berserker")
             {
-                embed.WithImageUrl("");
-                classEmoji = ;
-                baseStats = "";
+                embed.WithImageUrl("https://media.discordapp.net/attachments/773626859585142868/782385335187013652/hiclipart.com_3.png?width=377&height=465");
+                classEmoji = Berserker;
+                baseStats = "47 Damage, 31 Health";
             }
             else
             {

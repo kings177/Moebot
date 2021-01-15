@@ -122,6 +122,22 @@ namespace RPG.Resources
                 "Imp" // Name
             );
 
+        public static Enemy WoodenBoss = new Enemy
+            (
+            "",
+            0, // Max Health
+            0, // Min Health
+            0, // Max Damage
+            0, // Min Damage
+            0, // Max Level
+            0, // Min Level
+            0, // Max Gold
+            0, // Min Gold
+            0, // Max XP
+            0, // Min XP
+            "" // Name
+            );
+
 
 
         public class DesignedEnemy

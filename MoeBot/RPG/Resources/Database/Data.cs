@@ -1,8 +1,7 @@
 ﻿using RPG.Resources.Database;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace RPG.Data
 {
@@ -16,10 +15,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.GoldAmount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.GoldAmount).FirstOrDefault();
             }
         }
 
@@ -27,10 +26,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return "You need to create an account.";
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Name).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Name).FirstOrDefault();
             }
         }
 
@@ -38,10 +37,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Age).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Age).FirstOrDefault();
             }
         }
 
@@ -49,10 +48,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => UserID == UserID).Select(x => x.Damage).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Damage).FirstOrDefault();
             }
         }
 
@@ -60,10 +59,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Health).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Health).FirstOrDefault();
             }
         }
 
@@ -71,10 +70,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Level).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Level).FirstOrDefault();
             }
         }
 
@@ -82,10 +81,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.XP).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.XP).FirstOrDefault();
             }
         }
 
@@ -93,10 +92,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.CurrentHealth).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.CurrentHealth).FirstOrDefault();
             }
         }
 
@@ -104,10 +103,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Hour).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Hour).FirstOrDefault();
             }
         }
 
@@ -115,10 +114,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Minute).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Minute).FirstOrDefault();
             }
         }
 
@@ -126,10 +125,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Second).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Second).FirstOrDefault();
             }
         }
 
@@ -137,10 +136,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Day).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Day).FirstOrDefault();
             }
         }
 
@@ -148,10 +147,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.DailyClaimed).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.DailyClaimed).FirstOrDefault();
             }
         }
 
@@ -159,10 +158,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return "None";
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Rank).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Rank).FirstOrDefault();
             }
         }
 
@@ -170,10 +169,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return "None";
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Class).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Class).FirstOrDefault();
             }
         }
 
@@ -184,20 +183,20 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return null;
                 {
                     RPG.Resources.Helmet helmet = new RPG.Resources.Helmet
                     (
                         UserID,
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_ModID).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_URL).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_Name).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_Cost).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_Rarity).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_Armor).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_Health).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Helmet_Regen).FirstOrDefault()
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_ModID).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_URL).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_Name).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_Cost).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_Rarity).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_Armor).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_Health).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Helmet_Regen).FirstOrDefault()
                     );
 
                     if (helmet.ItemName == "0")
@@ -211,19 +210,19 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null) return null;
                 {
                     RPG.Resources.Gauntlets gauntlets = new RPG.Resources.Gauntlets
                     (
                         UserID,
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_ModID).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_URL).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Name).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Cost).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Rarity).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Armor).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Health).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Regen).FirstOrDefault()
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_ModID).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_URL).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Name).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Cost).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Rarity).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Armor).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Health).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Gauntlet_Regen).FirstOrDefault()
                     );
 
                     if (gauntlets.ItemName == "0")
@@ -238,19 +237,19 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null) return null;
                 {
                     RPG.Resources.Chestplate chestplate = new RPG.Resources.Chestplate
                     (
                         UserID,
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_ModID).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_URL).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_Name).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_Cost).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_Rarity).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_Armor).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_Health).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Chestplate_Regen).FirstOrDefault()
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_ModID).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_URL).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_Name).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_Cost).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_Rarity).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_Armor).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_Health).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Chestplate_Regen).FirstOrDefault()
                     );
 
                     if (chestplate.ItemName == "0")
@@ -265,19 +264,19 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null) return null;
                 {
                     RPG.Resources.Belt belt = new RPG.Resources.Belt
                     (
                         UserID,
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_ModID).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_URL).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_Name).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_Cost).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_Rarity).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_Armor).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_Health).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Belt_Regen).FirstOrDefault()
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_ModID).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_URL).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_Name).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_Cost).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_Rarity).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_Armor).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_Health).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Belt_Regen).FirstOrDefault()
                     );
 
                     if (belt.ItemName == "0")
@@ -292,19 +291,19 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null) return null;
                 {
                     RPG.Resources.Leggings leggings = new RPG.Resources.Leggings
                     (
                         UserID,
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_ModID).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_URL).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_Name).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_Cost).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_Rarity).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_Armor).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_Health).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Legging_Regen).FirstOrDefault()
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_ModID).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_URL).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_Name).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_Cost).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_Rarity).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_Armor).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_Health).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Legging_Regen).FirstOrDefault()
                     );
 
                     if (leggings.ItemName == "0")
@@ -319,19 +318,19 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return null;
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null) return null;
                 {
                     RPG.Resources.Boots boots = new RPG.Resources.Boots
                     (
                         UserID,
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_ModID).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_URL).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_Name).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_Cost).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_Rarity).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_Armor).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_Health).FirstOrDefault(),
-                        DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Boot_Regen).FirstOrDefault()
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_ModID).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_URL).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_Name).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_Cost).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_Rarity).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_Armor).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_Health).FirstOrDefault(),
+                        DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Boot_Regen).FirstOrDefault()
                     );
 
                     if (boots.ItemName == "0")
@@ -348,10 +347,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.SkillPoints).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.SkillPoints).FirstOrDefault();
             }
         }
 
@@ -359,10 +358,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Stamina).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Stamina).FirstOrDefault();
             }
         }
 
@@ -370,10 +369,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Stability).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Stability).FirstOrDefault();
             }
         }
 
@@ -381,10 +380,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Dexterity).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Dexterity).FirstOrDefault();
             }
         }
 
@@ -392,10 +391,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Strength).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Strength).FirstOrDefault();
             }
         }
 
@@ -403,10 +402,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Luck).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Luck).FirstOrDefault();
             }
         }
 
@@ -416,10 +415,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.SmallPotionCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.SmallPotionCount).FirstOrDefault();
             }
         }
 
@@ -427,10 +426,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.MediumPotionCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.MediumPotionCount).FirstOrDefault();
             }
         }
 
@@ -438,10 +437,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.LargePotionCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.LargePotionCount).FirstOrDefault();
             }
         }
 
@@ -451,10 +450,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.CommonBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.CommonBoxCount).FirstOrDefault();
             }
         }
 
@@ -462,10 +461,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.CommonBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.UncommonBoxCount).FirstOrDefault();
             }
         }
 
@@ -473,10 +472,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.RareBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.RareBoxCount).FirstOrDefault();
             }
         }
 
@@ -484,10 +483,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.EpicBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.VeryRareBoxCount).FirstOrDefault();
             }
         }
 
@@ -495,10 +494,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.LegendaryBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.LegendaryBoxCount).FirstOrDefault();
             }
         }
 
@@ -506,10 +505,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.LegendaryBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.MythicBoxCount).FirstOrDefault();
             }
         }
 
@@ -517,10 +516,10 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return 0;
 
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.OmegaBoxCount).FirstOrDefault();
+                return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.OmegaBoxCount).FirstOrDefault();
             }
         }
 
@@ -538,7 +537,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -548,7 +547,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
                         Current.XP = XP;
                         DbContext.Data.Update(Current);
                     }
@@ -561,7 +560,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
                 if (query != null && query.Count() < 1)
                 {
                     DbContext.Data.Add(new UserData
@@ -581,7 +580,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirsOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
                         Current.GoldAmount += GoldAmount;
                         Current.Age += Age;
                         Current.Damage += Damage;
@@ -611,14 +610,14 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1) { return; }
                 else
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         if ((int)Current.GoldAmount - (int)GoldAmount < 0)
                             Current.GoldAmount = 0;
@@ -659,14 +658,14 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1) { return; }
                 else
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         if ((int)Current.Stamina - (int)stamina < 0)
                             Current.Stamina = 0;
@@ -701,14 +700,14 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1) { return; }
                 else
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Stamina += stamina;
 
@@ -732,11 +731,11 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query == null || query.Count() < 1) { return; }
 
-                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
                 Current.Hour = Hour; Current.Minute = Minute; Current.Second = Second; Current.Day = Day;
                 DbContext.Data.Update(Current);
 
@@ -748,9 +747,9 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
                 if (query == null || query.Count() < 1) { return; }
-                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
                 Current.DailyClaimed = Date;
                 DbContext.Data.Update(Current);
                 await DbContext.SaveChangesAsync();
@@ -761,9 +760,9 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
                 if (query == null || query.Count() < 1) { return; }
-                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
                 Current.Rank = SetRank;
                 DbContext.Data.Update(Current);
                 await DbContext.SaveChangesAsync();
@@ -774,9 +773,9 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
                 if (query == null || query.Count() < 1) { return; }
-                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
                 Current.Class = SetClass;
                 DbContext.Data.Update(Current);
                 await DbContext.SaveChangesAsync();
@@ -787,7 +786,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -796,7 +795,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Helmet_ModID = helmet.ItemID;
                         Current.Helmet_Name = helmet.ItemName;
@@ -819,7 +818,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -828,7 +827,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Helmet_ModID = 0;
                         Current.Helmet_Name = "0";
@@ -851,7 +850,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -860,7 +859,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Chestplate_ModID = chestplate.ItemID;
                         Current.Chestplate_Name = chestplate.ItemName;
@@ -883,7 +882,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -892,7 +891,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Chestplate_ModID = 0;
                         Current.Chestplate_Name = "0";
@@ -915,7 +914,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -924,7 +923,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Gauntlet_ModID = gauntlets.ItemID;
                         Current.Gauntlet_Name = gauntlets.ItemName;
@@ -947,7 +946,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -956,7 +955,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Gauntlet_ModID = 0;
                         Current.Gauntlet_Name = "0";
@@ -979,7 +978,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -988,7 +987,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Belt_ModID = belt.ItemID;
                         Current.Belt_Name = belt.ItemName;
@@ -1011,7 +1010,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1020,7 +1019,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Belt_ModID = 0;
                         Current.Belt_Name = "0";
@@ -1043,7 +1042,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1052,7 +1051,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Legging_ModID = leggings.ItemID;
                         Current.Legging_Name = leggings.ItemName;
@@ -1075,7 +1074,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1084,7 +1083,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Legging_ModID = 0;
                         Current.Legging_Name = "0";
@@ -1107,7 +1106,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1116,7 +1115,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Boot_ModID = boots.ItemID;
                         Current.Boot_Name = boots.ItemName;
@@ -1139,7 +1138,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1148,7 +1147,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Boot_ModID = 0;
                         Current.Boot_Name = "0";
@@ -1171,7 +1170,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1180,7 +1179,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.SkillPoints = Current.SkillPoints + amount;
 
@@ -1196,7 +1195,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1205,7 +1204,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.SkillPoints = amount;
 
@@ -1221,7 +1220,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1230,7 +1229,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Stamina = Current.Stamina + amount;
 
@@ -1246,7 +1245,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1255,7 +1254,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Stamina = amount;
 
@@ -1271,7 +1270,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1280,7 +1279,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Stability = Current.Stability + amount;
 
@@ -1296,7 +1295,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1305,7 +1304,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Stability = amount;
 
@@ -1321,7 +1320,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1330,7 +1329,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Dexterity = Current.Dexterity + amount;
 
@@ -1346,7 +1345,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1355,7 +1354,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Dexterity = amount;
 
@@ -1371,7 +1370,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1380,7 +1379,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Strength = Current.Strength + amount;
 
@@ -1396,7 +1395,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1405,7 +1404,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Strength = amount;
 
@@ -1421,7 +1420,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1430,7 +1429,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Luck = Current.Luck + amount;
 
@@ -1446,7 +1445,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1455,7 +1454,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.Luck = amount;
 
@@ -1471,7 +1470,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1480,7 +1479,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.SmallPotionCount = Current.SmallPotionCount + amount;
 
@@ -1496,7 +1495,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1505,7 +1504,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.SmallPotionCount = amount;
 
@@ -1521,7 +1520,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1530,7 +1529,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.MediumPotionCount = Current.MediumPotionCount + amount;
 
@@ -1546,7 +1545,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1555,7 +1554,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.MediumPotionCount = amount;
 
@@ -1571,7 +1570,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1580,7 +1579,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LargePotionCount = Current.LargePotionCount + amount;
 
@@ -1596,7 +1595,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1605,7 +1604,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LargePotionCount = amount;
 
@@ -1621,7 +1620,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1630,7 +1629,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.CommonBoxCount = Current.CommonBoxCount + amount;
 
@@ -1646,7 +1645,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1655,7 +1654,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.CommonBoxCount = amount;
 
@@ -1670,7 +1669,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1679,7 +1678,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.UncommonBoxCount = Current.UncommonBoxCount + amount;
 
@@ -1695,7 +1694,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1704,7 +1703,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.UncommonBoxCount = amount;
 
@@ -1720,7 +1719,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1729,7 +1728,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.RareBoxCount = Current.RareBoxCount + amount;
 
@@ -1745,7 +1744,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1754,7 +1753,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.RareBoxCount = amount;
 
@@ -1770,7 +1769,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1779,7 +1778,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.VeryRareBoxCount = Current.VeryRareBoxCount + amount;
 
@@ -1795,7 +1794,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1804,7 +1803,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.VeryRareBoxCount = amount;
 
@@ -1820,7 +1819,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1829,7 +1828,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LegendaryBoxCount = Current.LegendaryBoxCount + amount;
 
@@ -1845,7 +1844,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1854,7 +1853,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LegendaryBoxCount = amount;
 
@@ -1870,7 +1869,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1879,7 +1878,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.MythicBoxCount = Current.MythicBoxCount + amount;
 
@@ -1895,7 +1894,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1904,7 +1903,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.MythicBoxCount = amount;
 
@@ -1920,7 +1919,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1929,7 +1928,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.OmegaBoxCount = Current.OmegaBoxCount + amount;
 
@@ -1945,7 +1944,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1954,7 +1953,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.OmegaBoxCount = amount;
 
@@ -1970,7 +1969,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -1979,7 +1978,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.WinCount = Current.WinCount + amount;
 
@@ -1995,7 +1994,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -2004,7 +2003,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.WinCount = amount;
 
@@ -2020,7 +2019,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -2029,7 +2028,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LoseCount = Current.LoseCount + amount;
 
@@ -2045,7 +2044,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
 
                 if (query != null && query.Count() < 1)
                 {
@@ -2054,7 +2053,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LoseCount = amount;
 
@@ -2070,9 +2069,9 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return;
-                else DbContext.Data.Remove(DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault());
+                else DbContext.Data.Remove(DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault());
             }
         }
 
@@ -2080,29 +2079,29 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                if (DbContext.Data.AsQueryable().Where(x => x.UserID == UserID) == null)
                     return false;
 
                 if (RegionName == "Training_Zone")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Training_Zone).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Training_Zone).FirstOrDefault() == 1;
 
                 else if (RegionName == "Forsaken_Graves")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Forsaken_Graves).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Forsaken_Graves).FirstOrDefault() == 1;
 
                 else if (RegionName == "Goblins_Lair")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Goblins_Lair).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Goblins_Lair).FirstOrDefault() == 1;
 
                 else if (RegionName == "Haunted_Towers")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Haunted_Towers).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Haunted_Towers).FirstOrDefault() == 1;
 
                 else if (RegionName == "Lost_Caves")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Lost_Caves).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Lost_Caves).FirstOrDefault() == 1;
 
                 else if (RegionName == "Spooky_Town")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Spooky_Town).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Spooky_Town).FirstOrDefault() == 1;
 
                 else if (RegionName == "Broken_Village")
-                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Broken_Village).FirstOrDefault() == 1;
+                    return DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).Select(x => x.Explored_Broken_Village).FirstOrDefault() == 1;
                 else
                 {
                     Console.WriteLine("Error in loading the regions explorated: " + RegionName);
@@ -2115,7 +2114,7 @@ namespace RPG.Data
         {
             using (var DbContext = new SqliteDbContext())
             {
-                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                var query = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID);
                 if (query != null && query.Count() < 1)
                 {
 
@@ -2124,7 +2123,7 @@ namespace RPG.Data
                 {
                     if (query != null)
                     {
-                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                        UserData Current = DbContext.Data.AsQueryable().Where(x => x.UserID == UserID).FirstOrDefault();
 
                         if (RegionName == "Training_zone")
                             Current.Explored_Training_Zone = 1;

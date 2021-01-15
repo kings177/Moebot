@@ -1,4 +1,9 @@
-﻿namespace RPG.Emojis
+﻿using System;
+using Discord;
+using RPG.Config;
+
+
+namespace RPG.Emojis
 {
     public static class Emojis
     {

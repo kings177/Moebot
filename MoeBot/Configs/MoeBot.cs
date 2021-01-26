@@ -37,8 +37,8 @@ namespace MoeClorito.Configs
                 .AddSingleton<CommandHandler>()
                 .AddSingleton<CommonCommands>()
                 .AddSingleton<AudioService>()
-                .AddSingleton<StartService>()
-                .AddLavaNode(x => { x.SelfDeaf = false; });
+                .AddLavaNode(x => { x.SelfDeaf = false; })
+                .AddSingleton<StartService>();
 
 
             var serviceProvider = services.BuildServiceProvider();

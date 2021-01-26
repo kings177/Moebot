@@ -46,6 +46,7 @@ namespace MoeClorito.Configs
             {
                 Console.WriteLine($"Connected as Moe Clorito ");
                 await Task.CompletedTask;
+                break;
             }
 
         }

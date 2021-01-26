@@ -142,7 +142,11 @@ namespace MoeClorito.Commands
             "\n**13.)** `;queue` or `;q`");
             embed.WithColor(40, 200, 150);
             embed.Color = Color.Gold;
-            await Context.Channel.SendMessageAsync("", false, embed.Build());
+            var msg = await Context.Channel.SendMessageAsync("", false, embed.Build());
+
+            await Task.Delay(20000);
+            await msg.DeleteAsync();
+            await Context.Message.DeleteAsync();
         }
 
 
@@ -174,7 +178,7 @@ namespace MoeClorito.Commands
             embed.Color = Color.Gold;
             var msg = await Context.Channel.SendMessageAsync("", false, embed.Build());
 
-            await Task.Delay(5500);
+            await Task.Delay(20000);
             await msg.DeleteAsync();
             await Context.Message.DeleteAsync();
         }

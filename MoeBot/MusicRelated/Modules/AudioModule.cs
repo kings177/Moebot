@@ -155,6 +155,11 @@ namespace MoeClorito.Modules
 
                         await ReplyAsync($"{searchResponse.Tracks.Count} tracks in queue.");
                     }
+                    else 
+                    { 
+                        await player.PlayAsync(track);
+                        await ReplyAsync($"Playing: {track.Title}");
+                    }
                 }
             }
         }

@@ -149,7 +149,7 @@ namespace MoeClorito.Configs
 
             Console.WriteLine("Loading Dependencies...");
 
-            if (File.Exists(@"Resources\MCollection.Monsters"))
+            if (File.Exists(@"RPG\Resources\MCollection.Monsters"))
             {
                 using (StreamReader sr = File.OpenText(@"Resources\MCollection.Monsters"))
                 {
@@ -168,7 +168,7 @@ namespace MoeClorito.Configs
             }
             else
             {
-                File.Create(@"Resources\MCollection.Monsters");
+                File.Create(@"RPG\Resources\MCollection.Monsters");
                 Console.WriteLine("Failed to find a valid monster collection...");
             }
 
